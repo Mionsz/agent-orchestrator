@@ -1,4 +1,6 @@
 node_modules/
+node-compile-cache/
+node-compile-cache/*
 dist/
 .pnpm-store/
 .next/
@@ -68,3 +70,5 @@ agent-orchestrator.yaml
 # OS-specific files
 .DS_Store
 Thumbs.db
+.gstack/
+.gitnexus
