@@ -122,6 +122,8 @@ fi
 
 # ─── Install, build, link ────────────────────────────────────────────────────
 
+cd "$REPO_ROOT"
+
 echo ""
 echo "Installing dependencies..."
 pnpm install
@@ -136,7 +138,7 @@ pnpm build
 
 echo ""
 echo "Linking CLI globally..."
-cd packages/ao
+cd "$REPO_ROOT/packages/ao"
 if npm link 2>/dev/null; then
   :
 elif [ "$INTERACTIVE" = true ]; then

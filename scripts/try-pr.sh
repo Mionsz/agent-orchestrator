@@ -19,7 +19,7 @@ if [ "$1" = "--restore" ]; then
     echo -e "${RED}Nothing to restore — no active try-pr session found.${RESET}"
     exit 1
   fi
-  AO_SHIM=$(which ao)
+  AO_SHIM=$(command -v ao)
   # Restore original shim
   if [ -f "$RESTORE_FILE.shim" ]; then
     cp "$RESTORE_FILE.shim" "$AO_SHIM"
@@ -68,7 +68,7 @@ fi
 
 # ── link ao ───────────────────────────────────────────────────────────────────
 # Directly update the pnpm shim to point at the worktree's dist/index.js
-AO_SHIM=$(which ao)
+AO_SHIM=$(command -v ao)
 AO_TARGET="$WORKTREE/packages/cli/dist/index.js"
 
 echo -e "\n${BOLD}Linking ao${RESET} → $AO_TARGET\n"
