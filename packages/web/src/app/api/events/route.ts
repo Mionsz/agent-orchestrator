@@ -146,6 +146,7 @@ export async function GET(request: Request): Promise<Response> {
           controller.enqueue(encoder.encode(`: heartbeat\n\n`));
         } catch {
           stopStream();
+          try { controller.close(); } catch { /* already closed */ }
         }
       }, 15000);
 
